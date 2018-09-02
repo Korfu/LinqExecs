@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace newLinq.Excercises
 {
-    class Exec9_CountAfterGroupBy
+    public class Exec9_CountAfterGroupBy
     {
+        public void GetCountAfterFrounBy(List<CarRow> oldlist)
+        {
+            Console.WriteLine("---------EXEC9: pogrupuj modele po producencie i wypisz ilu różnych producentów istnieje--------");
+            var groupedBy = oldlist.GroupBy(x => x.Division);
+
+            foreach (var group in groupedBy)
+            {
+                Console.WriteLine($"{group.Key} count is {group.Count()}");
+            }
+        }
     }
 }

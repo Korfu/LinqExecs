@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using newLinq.Excercises;
 
 namespace newLinq
@@ -12,13 +10,6 @@ namespace newLinq
     {
         public static void Main(string[] args)
         {
-            var top10BestFe = new Exec1_Top10BestFe();
-            var fuelConsumptionInLPer100Km= new Exec2_FuelConsumptionInLPer100Km();
-            var sortAlfabetically = new Exec3_SortAlfabetically();
-            var top10FuelConsumptionChevrolet = new Exec4_Top10FuelConsumptionChevrolet();
-            var bMWFuelEfficencyUnder20 = new Exec5_BMWFuelEfficencyUnder20();
-            var areAllPorshe = new Exec6_AreAllPorshe();
-
             string[] rows = File.ReadAllLines("Excel Files/fuel.csv");
 
             var headers = rows.First().Split(',');
@@ -46,76 +37,53 @@ namespace newLinq
             }).ToList();
 
             //exec1
+            var top10BestFe = new Exec1_Top10BestFe();
             top10BestFe.GetTop10BestFe(carList);
 
             //exec2
+            var fuelConsumptionInLPer100Km = new Exec2_FuelConsumptionInLPer100Km();
             fuelConsumptionInLPer100Km.GetFuelConsumptionInLPer100Km(carList);
 
             //exec3
+            var sortAlfabetically = new Exec3_SortAlfabetically();
             sortAlfabetically.GetSortAlfabetically(carList);
 
             //exec4
+            var top10FuelConsumptionChevrolet = new Exec4_Top10FuelConsumptionChevrolet();
             top10FuelConsumptionChevrolet.GetTop10FuelConsumptionChevrolet(carList);
 
             //exec5
+            var bMWFuelEfficencyUnder20 = new Exec5_BMWFuelEfficencyUnder20();
             bMWFuelEfficencyUnder20.GetBMWFuelEfficencyUnder20(carList);
 
             //exec6
+            var areAllPorshe = new Exec6_AreAllPorshe();
             areAllPorshe.CheckIfAreAllPorshe(carList);
 
             //exec7 prawdzy czy istnieje jaki kolwiek model wyprodukowany przez "Fiat", to samo dla "Olds Mobile"
-            Console.WriteLine("---------EXEC7: czy jakiś to Fiat albo Olds Mobile--------");
-            var anyFiat = carList.Any(c => c.Division == "Fiat");
-            if (anyFiat)
-            {
-                Console.WriteLine("There are some Fiats");
-            }
-            else Console.WriteLine("There are no Fiats");
-
-            var anyOlds = carList.Any(c => c.Division == "Olds Mobile");
-            if (anyOlds)
-            {
-                Console.WriteLine("There are some Olds Mobiles");
-            }
-            else Console.WriteLine("There are no Olds Mobiles");
+            var anyFiatOrOldsMobile = new Exec7_AnyFiatOrOldsMobile();
+            anyFiatOrOldsMobile.CheckIfAnyFiatOrOldsMobile(carList);
 
             //exec8 pogrupuj modele po producencie i wypisz ilu różnych producentów istnieje
-            Console.WriteLine("---------EXEC8: pogrupuj modele po producencie i wypisz ilu różnych producentów istnieje--------");
-            var groupedBy = carList.GroupBy(x => x.Division);
-            Console.WriteLine($"There are {groupedBy.Count()} Producents");
+            var groupByModelAndHowManyProducents = new Exec8_GroupByModelAndHowManyProducents();
+            groupByModelAndHowManyProducents.GetGroupByModelAndHowManyProducents(carList);
 
 
             //exec9 używając grup z poprzedniego punktu wypisz liczebność każdej grupy
-            Console.WriteLine("---------EXEC9: pogrupuj modele po producencie i wypisz ilu różnych producentów istnieje--------");
-            foreach (var group in groupedBy)
-            {
-                Console.WriteLine($"{group.Key} count is {group.Count()}");
-            }
+            var countAfterGroupBy = new Exec9_CountAfterGroupBy();
+            countAfterGroupBy.GetCountAfterFrounBy(carList);
+
 
             //exec10 wypisz producentów dla których istnieje conajmniej 50 modeli/ 20 modeli
-            Console.WriteLine("---------EXEC10: wypisz producentów dla których istnieje conajmniej 50 modeli/ 20 modeli--------");
-
-            var between20and50 = groupedBy.Where(x => x.Count() > 20 && x.Count() < 50);
-            foreach (var group in between20and50)
-            {
-                Console.WriteLine($"{group.Key}");
-            }
+            var allProdcuentsWith20to50Cars = new Exec10_AllProdcuentsWith20to50Cars();
+            allProdcuentsWith20to50Cars.GetAllProdcuentsWith20to50Cars(carList);
 
             //exec11 dla producentów dla których istnieje conajmniej 20 modeli wypisz wszystkie modele
-            Console.WriteLine("---------EXEC11:producentów dla których istnieje conajmniej 20 modeli wypisz wszystkie modele");
-
-            var selectmany = between20and50.SelectMany(x => x).Select(x => x.Carline).Distinct();
-            foreach (var item in selectmany)
-            {
-                Console.WriteLine($"{item}");
-            }
+            var displayAllModlesForTheOnesBetween20and50 = new Exec11_DisplayAllModlesForTheOnesBetween20and50();
+            displayAllModlesForTheOnesBetween20and50.GetDisplayAllModlesForTheOnesBetween20and50(carList);
 
             Console.WriteLine("press enter to exit");
             Console.ReadLine();
         }
-
-        
-
-
     }
 }
