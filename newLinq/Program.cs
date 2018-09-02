@@ -63,6 +63,52 @@ namespace newLinq
             //exec6
             areAllPorshe.CheckIfAreAllPorshe(carList);
 
+            //exec7 prawdzy czy istnieje jaki kolwiek model wyprodukowany przez "Fiat", to samo dla "Olds Mobile"
+            Console.WriteLine("---------EXEC7: czy jakiś to Fiat albo Olds Mobile--------");
+            var anyFiat = carList.Any(c => c.Division == "Fiat");
+            if (anyFiat)
+            {
+                Console.WriteLine("There are some Fiats");
+            }
+            else Console.WriteLine("There are no Fiats");
+
+            var anyOlds = carList.Any(c => c.Division == "Olds Mobile");
+            if (anyOlds)
+            {
+                Console.WriteLine("There are some Olds Mobiles");
+            }
+            else Console.WriteLine("There are no Olds Mobiles");
+
+            //exec8 pogrupuj modele po producencie i wypisz ilu różnych producentów istnieje
+            Console.WriteLine("---------EXEC8: pogrupuj modele po producencie i wypisz ilu różnych producentów istnieje--------");
+            var groupedBy = carList.GroupBy(x => x.Division);
+            Console.WriteLine($"There are {groupedBy.Count()} Producents");
+
+
+            //exec9 używając grup z poprzedniego punktu wypisz liczebność każdej grupy
+            Console.WriteLine("---------EXEC9: pogrupuj modele po producencie i wypisz ilu różnych producentów istnieje--------");
+            foreach (var group in groupedBy)
+            {
+                Console.WriteLine($"{group.Key} count is {group.Count()}");
+            }
+
+            //exec10 wypisz producentów dla których istnieje conajmniej 50 modeli/ 20 modeli
+            Console.WriteLine("---------EXEC10: wypisz producentów dla których istnieje conajmniej 50 modeli/ 20 modeli--------");
+
+            var between20and50 = groupedBy.Where(x => x.Count() > 20 && x.Count() < 50);
+            foreach (var group in between20and50)
+            {
+                Console.WriteLine($"{group.Key}");
+            }
+
+            //exec11 dla producentów dla których istnieje conajmniej 20 modeli wypisz wszystkie modele
+            Console.WriteLine("---------EXEC11:producentów dla których istnieje conajmniej 20 modeli wypisz wszystkie modele");
+
+            var selectmany = between20and50.SelectMany(x => x).Select(x => x.Carline).Distinct();
+            foreach (var item in selectmany)
+            {
+                Console.WriteLine($"{item}");
+            }
 
             Console.WriteLine("press enter to exit");
             Console.ReadLine();
