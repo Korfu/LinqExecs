@@ -16,6 +16,7 @@ namespace newLinq
             var fuelConsumptionInLPer100Km= new FuelConsumptionInLPer100Km();
             var sortAlfabetically = new SortAlfabetically();
             var top10FuelConsumptionChevrolet = new Top10FuelConsumptionChevrolet();
+            var bMWFuelEfficencyUnder20 = new BMWFuelEfficencyUnder20();
 
             string[] rows = File.ReadAllLines("Excel Files/fuel.csv");
 
@@ -54,6 +55,9 @@ namespace newLinq
 
             //exec4
             top10FuelConsumptionChevrolet.GetTop10FuelConsumptionChevrolet(carList);
+
+            //exec5
+            bMWFuelEfficencyUnder20.GetBMWFuelEfficencyUnder20(carList);
 
             Console.WriteLine("press enter to exit");
             Console.ReadLine();
