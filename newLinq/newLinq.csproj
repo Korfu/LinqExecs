@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Excercises\AreAllPorshe.cs" />
     <Compile Include="Excercises\BMWFuelEfficencyUnder20.cs" />
     <Compile Include="Excercises\FuelConsumptionInLPer100Km.cs" />
     <Compile Include="Excercises\SortAlfabetically.cs" />

@@ -17,6 +17,7 @@ namespace newLinq
             var sortAlfabetically = new SortAlfabetically();
             var top10FuelConsumptionChevrolet = new Top10FuelConsumptionChevrolet();
             var bMWFuelEfficencyUnder20 = new BMWFuelEfficencyUnder20();
+            var areAllPorshe = new AreAllPorshe();
 
             string[] rows = File.ReadAllLines("Excel Files/fuel.csv");
 
@@ -58,6 +59,10 @@ namespace newLinq
 
             //exec5
             bMWFuelEfficencyUnder20.GetBMWFuelEfficencyUnder20(carList);
+
+            //exec6
+            areAllPorshe.CheckIfAreAllPorshe(carList);
+
 
             Console.WriteLine("press enter to exit");
             Console.ReadLine();
