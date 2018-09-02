@@ -45,6 +45,7 @@
     <Compile Include="Excercises\FuelConsumptionInLPer100Km.cs" />
     <Compile Include="Excercises\SortAlfabetically.cs" />
     <Compile Include="Excercises\Top10BestFe.cs" />
+    <Compile Include="Excercises\Top10FuelConsumptionChevrolet.cs" />
     <Compile Include="Models\CarRow.cs" />
     <Compile Include="Helpers\DisplayHelper.cs" />
     <Compile Include="Program.cs" />

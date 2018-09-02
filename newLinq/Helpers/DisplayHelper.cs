@@ -9,7 +9,7 @@ namespace newLinq
         {
             foreach (var property in typeof(T).GetProperties())
             {
-                Console.Write($"{property.GetValue(entity).ToString(), -24}|");
+                Console.Write($"{property.GetValue(entity).ToString(), -26}|");
             }
             Console.WriteLine();
         }

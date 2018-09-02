@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace newLinq.Excercises
 {
     public class Top10BestFe
     {
-
         public void GetTop10BestFe(List<CarRow> oldList)
         {
             Console.WriteLine("---------EXEC1: 10 modeli o najmniejszym spalaniu--------");
@@ -21,6 +18,5 @@ namespace newLinq.Excercises
                 displayHelper.Display(row);
             }
         }
-
     }
 }

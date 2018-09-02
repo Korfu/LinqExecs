@@ -15,13 +15,14 @@ namespace newLinq
             var top10BestFe = new Top10BestFe();
             var fuelConsumptionInLPer100Km= new FuelConsumptionInLPer100Km();
             var sortAlfabetically = new SortAlfabetically();
+            var top10FuelConsumptionChevrolet = new Top10FuelConsumptionChevrolet();
 
             string[] rows = File.ReadAllLines("Excel Files/fuel.csv");
 
             var headers = rows.First().Split(',');
             foreach (var header in headers)
             {
-                Console.Write($"{header.ToString(),-24}|");
+                Console.Write($"{header.ToString(),-26}|");
             }
             Console.WriteLine();
 
@@ -50,6 +51,9 @@ namespace newLinq
 
             //exec3
             sortAlfabetically.GetSortAlfabetically(carList);
+
+            //exec4
+            top10FuelConsumptionChevrolet.GetTop10FuelConsumptionChevrolet(carList);
 
             Console.WriteLine("press enter to exit");
             Console.ReadLine();
