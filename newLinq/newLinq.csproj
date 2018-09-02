@@ -42,11 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Excercises\FuelConsumptionInLPer100Km.cs" />
+    <Compile Include="Excercises\SortAlfabetically.cs" />
+    <Compile Include="Excercises\Top10BestFe.cs" />
+    <Compile Include="Models\CarRow.cs" />
+    <Compile Include="Helpers\DisplayHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Excel Files\fuel.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
