@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace newLinq.Excercises
 {
-    public class FuelConsumptionInLPer100Km
+    public class Exec2_FuelConsumptionInLPer100Km
     {
         public void GetFuelConsumptionInLPer100Km(List<CarRow> oldList)
         {

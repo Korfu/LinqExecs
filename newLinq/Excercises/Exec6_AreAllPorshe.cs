@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace newLinq.Excercises
 {
-    public class AreAllPorshe
+    public class Exec6_AreAllPorshe
     {
         public void CheckIfAreAllPorshe(List<CarRow> oldList)
         {

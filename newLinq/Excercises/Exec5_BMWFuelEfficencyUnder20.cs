@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace newLinq.Excercises
 {
-    public class BMWFuelEfficencyUnder20
+    public class Exec5_BMWFuelEfficencyUnder20
     {
         public void GetBMWFuelEfficencyUnder20(List<CarRow> oldList)
         {

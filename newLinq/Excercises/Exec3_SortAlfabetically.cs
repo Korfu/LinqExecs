@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace newLinq.Excercises
 {
-    public class SortAlfabetically
+    public class Exec3_SortAlfabetically
     {
         public void GetSortAlfabetically(List<CarRow> oldList)
         {

@@ -42,12 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Excercises\AreAllPorshe.cs" />
-    <Compile Include="Excercises\BMWFuelEfficencyUnder20.cs" />
-    <Compile Include="Excercises\FuelConsumptionInLPer100Km.cs" />
-    <Compile Include="Excercises\SortAlfabetically.cs" />
-    <Compile Include="Excercises\Top10BestFe.cs" />
-    <Compile Include="Excercises\Top10FuelConsumptionChevrolet.cs" />
+    <Compile Include="Excercises\Exec10_AllProdcuentsWith20to50Cars.cs" />
+    <Compile Include="Excercises\Exec11_DisplayAllModlesForTheOnesBetween20and50.cs" />
+    <Compile Include="Excercises\Exec6_AreAllPorshe.cs" />
+    <Compile Include="Excercises\Exec5_BMWFuelEfficencyUnder20.cs" />
+    <Compile Include="Excercises\Exec2_FuelConsumptionInLPer100Km.cs" />
+    <Compile Include="Excercises\Exec7_AnyFiatOrOldsMobile.cs" />
+    <Compile Include="Excercises\Exec8_GroupByModelAndHowManyProducents.cs" />
+    <Compile Include="Excercises\Exec3_SortAlfabetically.cs" />
+    <Compile Include="Excercises\Exec1_Top10BestFe.cs" />
+    <Compile Include="Excercises\Exec4_Top10FuelConsumptionChevrolet.cs" />
+    <Compile Include="Excercises\Exec9_CountAfterGroupBy.cs" />
     <Compile Include="Models\CarRow.cs" />
     <Compile Include="Helpers\DisplayHelper.cs" />
     <Compile Include="Program.cs" />

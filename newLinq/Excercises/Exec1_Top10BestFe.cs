@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace newLinq.Excercises
 {
-    public class Top10BestFe
+    public class Exec1_Top10BestFe
     {
         public void GetTop10BestFe(List<CarRow> oldList)
         {

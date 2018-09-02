@@ -12,12 +12,12 @@ namespace newLinq
     {
         public static void Main(string[] args)
         {
-            var top10BestFe = new Top10BestFe();
-            var fuelConsumptionInLPer100Km= new FuelConsumptionInLPer100Km();
-            var sortAlfabetically = new SortAlfabetically();
-            var top10FuelConsumptionChevrolet = new Top10FuelConsumptionChevrolet();
-            var bMWFuelEfficencyUnder20 = new BMWFuelEfficencyUnder20();
-            var areAllPorshe = new AreAllPorshe();
+            var top10BestFe = new Exec1_Top10BestFe();
+            var fuelConsumptionInLPer100Km= new Exec2_FuelConsumptionInLPer100Km();
+            var sortAlfabetically = new Exec3_SortAlfabetically();
+            var top10FuelConsumptionChevrolet = new Exec4_Top10FuelConsumptionChevrolet();
+            var bMWFuelEfficencyUnder20 = new Exec5_BMWFuelEfficencyUnder20();
+            var areAllPorshe = new Exec6_AreAllPorshe();
 
             string[] rows = File.ReadAllLines("Excel Files/fuel.csv");
 

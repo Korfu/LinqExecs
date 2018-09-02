@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace newLinq.Excercises
 {
-    public class Top10FuelConsumptionChevrolet
+    public class Exec4_Top10FuelConsumptionChevrolet
     {
         public void GetTop10FuelConsumptionChevrolet(List<CarRow> oldList)
         {
-            Console.WriteLine("---------EXEC1: 10 modeli Chevroleta o najmniejszym spalaniu--------");
+            Console.WriteLine("---------EXEC4: 10 modeli Chevroleta o najmniejszym spalaniu--------");
             var displayHelper = new DisplayHelper();
 
             var newList = oldList.Where(c => c.Division == "Chevrolet").OrderByDescending(x => x.CityFE).Take(10).ToList();
